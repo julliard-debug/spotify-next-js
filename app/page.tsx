@@ -1,4 +1,7 @@
 // page.tsx
+import React from 'react';
+import './globals.css'; // Assurez-vous que ce fichier contient les styles nécessaires
+import { Metadata } from 'next';
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-gradient-to-b from-black to-[#121212]">

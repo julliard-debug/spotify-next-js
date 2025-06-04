@@ -2,6 +2,9 @@
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import SpotifyWebApi from 'spotify-web-api-node';
+import Image from 'next/image';
+import './globals.css'; 
+
 
 export default async function Dashboard() {
   // Correction: await pour obtenir le cookieStore
@@ -32,11 +35,14 @@ export default async function Dashboard() {
           <div className="grid gap-4">
             {topTracks.body.items.map((track) => (
               <div key={track.id} className="flex items-center p-4 bg-gray-800 rounded-lg">
-                <img 
-                  src={track.album.images[0]?.url} 
-                  alt={track.name}
-                  className="w-16 h-16 rounded mr-4"
-                />
+                    <Image
+                    src={track.album.images[0]?.url || '/placeholder.png'} 
+                    alt={track.name}
+                    width={64}
+                    height={64}
+                    className="rounded mr-4"
+                    priority={false}
+                    />
                 <div>
                   <h3 className="font-medium">{track.name}</h3>
                   <p className="text-gray-400">
