@@ -34,7 +34,10 @@ export async function GET(request: NextRequest) {
     
     return response;
 
-  } catch (error) {
-    return NextResponse.redirect('https://spotify-next-js-one.vercel.app/?error=auth_failed');
-  }
+ } catch (error) {
+  console.error('Callback error:', error);  // <-- Maintenant utilisé
+  return NextResponse.redirect(
+    new URL(`/?error=${encodeURIComponent(error instanceof Error ? error.message : 'Unknown error')}`, request.url)
+  );
+}
 }
