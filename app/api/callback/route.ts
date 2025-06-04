@@ -24,6 +24,7 @@ export async function GET(request: NextRequest) {
 
     const data = await tokenResponse.json();
     
+    
     const response = NextResponse.redirect('https://spotify-next-js-one.vercel.app/dashboard');
     response.cookies.set('spotify_access_token', data.access_token, {
       httpOnly: true,

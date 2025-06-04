@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default async function Dashboard() {
   // Correction: await pour obtenir le cookieStore
-  const cookieStore = await cookies();
+  const cookieStore = cookies(); // Sans `await`
   const accessToken = cookieStore.get('spotify_access_token')?.value;
 
   if (!accessToken) {
