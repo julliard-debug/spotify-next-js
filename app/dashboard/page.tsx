@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default async function Dashboard() {
   // Correction: await pour obtenir le cookieStore
-  const cookieStore = cookies(); // Sans `await`
+  const cookieStore = await cookies();
   const accessToken = cookieStore.get('spotify_access_token')?.value;
 
   if (!accessToken) {
@@ -55,8 +55,6 @@ export default async function Dashboard() {
     );
   } catch (error) {
     console.error('Failed to fetch Spotify data:', error);
-    console.log("Spotify Access Token Set:", accessToken);
-
     return (
       <div className="p-8 text-center">
         <p className="text-red-500">Erreur lors de la récupération des données Spotify.</p>
