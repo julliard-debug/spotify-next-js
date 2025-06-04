@@ -55,6 +55,8 @@ export default async function Dashboard() {
     );
   } catch (error) {
     console.error('Failed to fetch Spotify data:', error);
+    console.log("Spotify Access Token Set:", accessToken);
+
     return (
       <div className="p-8 text-center">
         <p className="text-red-500">Erreur lors de la récupération des données Spotify.</p>
