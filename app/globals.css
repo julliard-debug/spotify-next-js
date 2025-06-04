@@ -19,7 +19,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #121212; /* Fond plus proche de Spotify */
+    --background: #121212; 
     --foreground: #ffffff;
   }
 }
