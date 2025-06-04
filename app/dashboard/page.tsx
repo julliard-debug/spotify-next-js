@@ -3,7 +3,7 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import SpotifyWebApi from 'spotify-web-api-node';
 import Image from 'next/image';
-import './globals.css'; 
+import '@/app/globals.css';
 
 
 export default async function Dashboard() {
