@@ -1,7 +1,9 @@
 // layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import React from "react";
+import '@/app/global.css'
+import type { Viewport } from 'next'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Spotify Connect | Votre musique, votre façon",
-  description: "Connectez-vous à Spotify pour découvrir votre musique préférée",
+export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#121212" },

@@ -3,8 +3,6 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import SpotifyWebApi from 'spotify-web-api-node';
 import Image from 'next/image';
-import '@/app/globals.css';
-
 
 export default async function Dashboard() {
   // Correction: await pour obtenir le cookieStore

@@ -1,6 +1,6 @@
 // page.tsx
 import React from 'react';
-import '@/app/globals.css'; // Assurez-vous que ce fichier contient les styles nécessaires
+import '@/app/global.css'; // Assurez-vous que ce fichier contient les styles nécessaires
 
 export default function Home() {
   return (
